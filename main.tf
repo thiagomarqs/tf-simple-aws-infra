@@ -17,8 +17,8 @@ provider "aws" {
   }
 }
 
-# module "ec2_asg" {
-#   source = "./modules/ec2_asg"
+# module "ec2_alb_asg" {
+#   source = "./modules/ec2_alb_asg"
 #   region = var.region
 # }
 
