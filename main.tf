@@ -17,18 +17,17 @@ provider "aws" {
   }
 }
 
-module "network" {
-  source = "./modules/network"
-  region = var.region
-}
+# module "ec2_asg" {
+#   source = "./modules/ec2_asg"
+#   region = var.region
+# }
 
-module "compute" {
-  source = "./modules/compute"
-  region = var.region
-  subnet_id = module.network.subnet_id
-  vpc_security_group_ids = [ module.network.sg_id ]
-}
+# module "ec2_igw_roles" {
+#   source = "./modules/ec2_igw_roles"
+#   region = var.region
+# }
 
-resource "aws_s3_bucket" "bucket" {
-  force_destroy = true
-}
+# module "ec2_nlb" {
+#   source = "./modules/ec2_nlb"
+#   region = var.region
+# }
